@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Component router
+    </title>
+</head>
+
+<body>
+    Hello Router
+    <br>
+    <br>
+    <router-component>
+
+        <div>
+            hi
+        </div>
+
+        <div>
+            hi
+        </div>
+        <a-tag href="home"></a-tag>
+        <switch-component> 
+            <!-- //mounts matched path here -->
+            <route-element path="/home" component="home-component" cache>
+                <p-tag>
+                    Hello Mr P
+                </p-tag>
+
+                <div>
+                    Inner div
+                </div>
+                <router-component>
+                    <switch-component>
+                        <!-- //mounts matched path here -->
+                        <route-element path="/home" component="home-component">
+                            <p>
+                                Hello Mr P
+                            </p>
+
+                            <div>
+                                Inner div
+                            </div>
+                        </route-element>
+                    </switch-component>
+                </router-component>
+            </route-element>
+
+            <route-element path="/user/home/adamu/:id" component="user-component" name="user-name" cache>
+                <h1></h1>
+                <div></div>
+            </route-element>
+
+            <route-element path="/account" component="account-component">
+            </route-element>
+
+            <route-element path="/dial" component="dial-component">
+            </route-element>
+        </switch-component>
+    </router-component>
+</body>
+
+</html>
